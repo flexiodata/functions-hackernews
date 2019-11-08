@@ -4,5 +4,5 @@ image:
   src: https://logo.clearbit.com/ycombinator.com
   alt: Y Combinator logo
 functions:
-  - path: intercom-enrich-users.py
+  - path: hackernews-list-stories.py
 prompts: []
