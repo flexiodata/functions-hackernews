@@ -1,0 +1,7 @@
+title: HackerNews Integration
+description: Functions for accessing stories from Hackernews
+image:
+  src: https://logo.clearbit.com/ycombinator.com
+  alt: Y Combinator logo
+functions:
+prompts: []
