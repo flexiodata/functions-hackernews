@@ -1,8 +1,8 @@
 # ---
 # name: hackernews-list-stories
 # deployed: true
-# title: HackerNews List Stories
-# description: Returns a list of the top-100 HackerNews most-recent stories matching the search term
+# title: Hacker News List Stories
+# description: Returns a list of the top-100 Hacker News most-recent stories matching the search term
 # params:
 # - name: search
 #   type: string
@@ -82,7 +82,13 @@ def flexio_handler(flex):
     try:
 
         # make the request
-        # see here for more info: https://hn.algolia.com/api
+        # limit search to title and don't allow any typos when matching in the title
+        # see here for more info:
+        # - https://hn.algolia.com/api
+        # - https://www.algolia.com/doc/api-reference/api-parameters/
+        url_query_params = {"query": input["search"], "tags": "story", "hitsPerPage": 100, "restrictSearchableAttributes":"title", "disableTypoToleranceOnAttributes":"title"}
+        url_query_str = urllib.parse.urlencode(url_query_params)
+
         url_query_params = {"query": input["search"], "tags": "story", "hitsPerPage": 100}
         url_query_str = urllib.parse.urlencode(url_query_params)
 
