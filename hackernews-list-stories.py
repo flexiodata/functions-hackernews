@@ -82,14 +82,16 @@ def flexio_handler(flex):
     try:
 
         # make the request
-        # limit search to title and don't allow any typos when matching in the title
         # see here for more info:
         # - https://hn.algolia.com/api
         # - https://www.algolia.com/doc/api-reference/api-parameters/
-        url_query_params = {"query": input["search"], "tags": "story", "hitsPerPage": 100, "restrictSearchableAttributes":"title", "disableTypoToleranceOnAttributes":"title"}
-        url_query_str = urllib.parse.urlencode(url_query_params)
-
-        url_query_params = {"query": input["search"], "tags": "story", "hitsPerPage": 100}
+        url_query_params = {
+            "query": input["search"],
+            "tags": "story",
+            "hitsPerPage": 100,
+            "restrictSearchableAttributes": "title",    # limit search to title
+            "disableTypoToleranceOnAttributes": "title" # don't allow typos when searching for words
+        }
         url_query_str = urllib.parse.urlencode(url_query_params)
 
         url = 'https://hn.algolia.com/api/v1/search_by_date?' + url_query_str
