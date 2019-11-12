@@ -4,7 +4,7 @@ image:
   src: https://logo.clearbit.com/ycombinator.com
   alt: Y Combinator logo
 functions:
-  - path: hackernews-list-comments
+  - path: hackernews-list-comments.py
   - path: hackernews-list-stories.py
   - path: hackernews-search-comments.py
   - path: hackernews-search-stories.py
