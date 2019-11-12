@@ -17,17 +17,10 @@
 # - '"google"'
 # notes: |
 #   The following properties are allowed:
-#     * `user_id`: the user id of the user associated with the event
 #     * `title`: the title of the story
 #     * `url`: the url of the story
-#     * `author`: the user who submitted the story
-#     * `points`: the number of points the story has
-#     * `story_text`: the story text
-#     * `comment_text`: the comment text
-#     * `num_comments`: the number of comments
-#     * `story_id`: the story id
-#     * `story_title`: the story title
-#     * `story_url`: the story url
+#     * `author`: the user who made the comment
+#     * `comment`: the comment text
 #     * `parent_id`: the parent id
 #     * `created_at`: the date the story was created
 # ---
@@ -66,16 +59,10 @@ def flexio_handler(flex):
 
     # map this function's property names to the API's property names
     property_map = OrderedDict()
-    property_map['title'] = 'title'
-    property_map['url'] = 'url'
+    property_map['title'] = 'story_title'
+    property_map['url'] = 'story_url'
     property_map['author'] = 'author'
-    property_map['points'] = 'points'
-    property_map['story_text'] = 'story_text'
-    property_map['comment_text'] = 'comment_text'
-    property_map['num_comments'] = 'num_comments'
-    property_map['story_id'] = 'story_id'
-    property_map['story_title'] = 'story_title'
-    property_map['story_url'] = 'story_url'
+    property_map['comment'] = 'comment_text'
     property_map['parent_id'] = 'parent_id'
     property_map['created_at'] = 'created_at'
 
