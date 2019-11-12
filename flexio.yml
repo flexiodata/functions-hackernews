@@ -5,4 +5,5 @@ image:
   alt: Y Combinator logo
 functions:
   - path: hackernews-list-stories.py
+  - path: hackernews-search-stories.py
 prompts: []
