@@ -4,25 +4,36 @@
 # title: Hacker News List Stories
 # description: Returns the 100-most-recent Hacker News stories matching the search term
 # params:
-# - name: search
-#   type: string
-#   description: Search string to use to find the stories to return
-#   required: true
-# - name: properties
-#   type: array
-#   description: The properties to return (defaults to all properties). See "Notes" for a listing of the available properties.
-#   required: false
+#   - name: search
+#     type: string
+#     description: Search string to use to find the stories to return
+#     required: true
+#   - name: properties
+#     type: array
+#     description: The properties to return (defaults to all properties). See "Returns" for a listing of the available properties.
+#     required: false
+# returns:
+#   - name: title
+#     type: string
+#     description: The title of the story
+#   - name: url
+#     type: string
+#     description: The url of the story
+#   - name: author
+#     type: string
+#     description: The user who submitted the story
+#   - name: points
+#     type: string
+#     description: The number of points the story has
+#   - name: num_comments
+#     type: string
+#     description: The number of comments
+#   - name: created_at
+#     type: string
+#     description: The date the story was created
 # examples:
-# - '"microsoft"'
-# - '"google"'
-# notes: |
-#   The following properties are allowed:
-#     * `title`: the title of the story
-#     * `url`: the url of the story
-#     * `author`: the user who submitted the story
-#     * `points`: the number of points the story has
-#     * `num_comments`: the number of comments
-#     * `created_at`: the date the story was created
+#   - '"microsoft"'
+#   - '"google"'
 # ---
 
 import json

@@ -4,25 +4,36 @@
 # title: Hacker News List Comments
 # description: Returns the 100-most-recent Hacker News comments matching the search term
 # params:
-# - name: search
-#   type: string
-#   description: Search string to use to find the comments to return
-#   required: true
-# - name: properties
-#   type: array
-#   description: The properties to return (defaults to all properties). See "Notes" for a listing of the available properties.
-#   required: false
+#   - name: search
+#     type: string
+#     description: Search string to use to find the comments to return
+#     required: true
+#   - name: properties
+#     type: array
+#     description: The properties to return (defaults to all properties). See "Returns" for a listing of the available properties.
+#     required: false
+# returns:
+#   - name: title
+#     type: string
+#     description: The title of the story
+#   - name: url
+#     type: string
+#     description: The url of the story
+#   - name: author
+#     type: string
+#     description: The user who made the comment
+#   - name: comment
+#     type: string
+#     description: The comment text
+#   - name: parent_id
+#     type: string
+#     description: The parent id
+#   - name: created_at
+#     type: string
+#     description: The date the story was created
 # examples:
-# - '"microsoft"'
-# - '"google"'
-# notes: |
-#   The following properties are allowed:
-#     * `title`: the title of the story
-#     * `url`: the url of the story
-#     * `author`: the user who made the comment
-#     * `comment`: the comment text
-#     * `parent_id`: the parent id
-#     * `created_at`: the date the story was created
+#   - '"microsoft"'
+#   - '"google"'
 # ---
 
 import json
