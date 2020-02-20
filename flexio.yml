@@ -1,7 +1,7 @@
 title: HackerNews Integration
 description: Functions for accessing stories from Hackernews
 image:
-  src: https://logo.clearbit.com/ycombinator.com
+  src: https://static.flex.io/assets/logos2/hacker-news.png
   alt: Y Combinator logo
 functions:
   - path: hackernews-list-comments.py
