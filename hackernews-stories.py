@@ -1,7 +1,7 @@
 # ---
-# name: hackernews-list-stories
+# name: hackernews-stories
 # deployed: true
-# title: Hacker News List Stories
+# title: Hacker News Stories
 # description: Returns the 100-most-recent Hacker News stories matching the search term
 # params:
 #   - name: search

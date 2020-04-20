@@ -1,7 +1,7 @@
 # ---
-# name: hackernews-list-comments
+# name: hackernews-comments
 # deployed: true
-# title: Hacker News List Comments
+# title: Hacker News Comments
 # description: Returns the 100-most-recent Hacker News comments matching the search term
 # params:
 #   - name: search
