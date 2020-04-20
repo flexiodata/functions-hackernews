@@ -4,8 +4,8 @@ image:
   src: https://static.flex.io/assets/logos2/hacker-news.png
   alt: Y Combinator logo
 functions:
-  - path: hackernews-list-comments.py
-  - path: hackernews-list-stories.py
+  - path: hackernews-comments.py
+  - path: hackernews-stories.py
   - path: hackernews-search-comments.py
   - path: hackernews-search-stories.py
 prompts: []
