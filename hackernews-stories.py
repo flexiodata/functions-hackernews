@@ -4,14 +4,14 @@
 # title: Hacker News Search Stories
 # description: Returns the 100-most-relevant Hacker News stories matching the search term
 # params:
-#   - name: search
-#     type: string
-#     description: Search string to use to find the stories to return
-#     required: true
 #   - name: properties
 #     type: array
 #     description: The properties to return (defaults to all properties). See "Returns" for a listing of the available properties.
 #     required: false
+#   - name: search
+#     type: string
+#     description: Search string to use to find the stories to return
+#     required: true
 # returns:
 #   - name: title
 #     type: string
@@ -32,8 +32,8 @@
 #     type: string
 #     description: The date the story was created
 # examples:
-#   - '"microsoft"'
-#   - '"google"'
+#   - '"*", "microsoft"'
+#   - '"*", "google"'
 # ---
 
 import json
@@ -58,8 +58,8 @@ def flexio_handler(flex):
     # define the expected parameters and map the values to the parameter names
     # based on the positions of the keys/values
     params = OrderedDict()
-    params['search'] = {'required': True, 'type': 'string'}
     params['properties'] = {'required': False, 'validator': validator_list, 'coerce': to_list, 'default': '*'}
+    params['search'] = {'required': True, 'type': 'string'}
     input = dict(zip(params.keys(), input))
 
     # validate the mapped input against the validator
