@@ -6,12 +6,12 @@
 # params:
 #   - name: properties
 #     type: array
-#     description: The properties to return (defaults to all properties). See "Returns" for a listing of the available properties.
+#     description: The properties to return, given as a string or array; defaults to all properties; see "Returns" for available properties
 #     required: false
-#   - name: search
-#     type: string
-#     description: Search string to use to find the comments to return
-#     required: true
+#   - name: filter
+#     type: array
+#     description: Search query to determine the rows to return, given as a string or array
+#     required: false
 # returns:
 #   - name: title
 #     type: string
