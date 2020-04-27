@@ -6,6 +6,4 @@ image:
 functions:
   - path: hackernews-comments.py
   - path: hackernews-stories.py
-  - path: hackernews-search-comments.py
-  - path: hackernews-search-stories.py
 prompts: []

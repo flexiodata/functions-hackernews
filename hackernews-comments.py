@@ -1,8 +1,8 @@
 # ---
-# name: hackernews-comments
+# name: hackernews-search-comments
 # deployed: true
-# title: Hacker News Comments
-# description: Returns the 100-most-recent Hacker News comments matching the search term
+# title: Hacker News Search Comments
+# description: Returns the 100-most-relevant Hacker News comments matching the search term
 # params:
 #   - name: search
 #     type: string
@@ -92,7 +92,7 @@ def flexio_handler(flex):
         }
         url_query_str = urllib.parse.urlencode(url_query_params)
 
-        url = 'https://hn.algolia.com/api/v1/search_by_date?' + url_query_str
+        url = 'https://hn.algolia.com/api/v1/search?' + url_query_str
         response = requests.get(url)
         content = response.json()
 
