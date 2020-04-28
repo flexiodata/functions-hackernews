@@ -2,7 +2,7 @@
 # name: hackernews-comments
 # deployed: true
 # title: Hacker News Comments
-# description: Returns the the Hacker News comments matching the search term
+# description: Returns the most recent Hacker News comments matching the search term
 # params:
 #   - name: properties
 #     type: array

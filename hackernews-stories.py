@@ -2,7 +2,7 @@
 # name: hackernews-stories
 # deployed: true
 # title: Hacker Stories
-# description: Returns the the Hacker News stories matching the search term
+# description: Returns the most recent Hacker News stories matching the search term
 # params:
 #   - name: properties
 #     type: array
