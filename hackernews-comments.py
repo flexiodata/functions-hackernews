@@ -26,7 +26,7 @@
 #     type: string
 #     description: The comment text
 #   - name: parent_id
-#     type: string
+#     type: number
 #     description: The parent id
 #   - name: created_at
 #     type: string

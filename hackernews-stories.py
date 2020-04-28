@@ -1,7 +1,7 @@
 # ---
 # name: hackernews-stories
 # deployed: true
-# title: Hacker Stories
+# title:  Hacker News Stories
 # description: Returns the most recent Hacker News stories matching the search term
 # params:
 #   - name: properties
@@ -23,10 +23,10 @@
 #     type: string
 #     description: The user who submitted the story
 #   - name: points
-#     type: string
+#     type: number
 #     description: The number of points the story has
 #   - name: num_comments
-#     type: string
+#     type: number
 #     description: The number of comments
 #   - name: created_at
 #     type: string
