@@ -72,12 +72,12 @@ def flexio_handler(flex):
 
     # get the properties to return and the property map;
     # if we have a wildcard, get all the properties
-    properties = [p.lower().strip() for p in input['properties']]
+    properties = [p.lower().strip() for p in params['properties']]
     if len(properties) == 1 and (properties[0] == '' or properties[0] == '*'):
         properties = list(get_item_info({}).keys())
 
     # get any configuration settings
-    config = urllib.parse.parse_qs(input['config'])
+    config = urllib.parse.parse_qs(params['config'])
     config = {k: v[0] for k, v in config.items()}
     limit = int(config.get('limit', 100))
     if limit >= 1000:
@@ -99,7 +99,7 @@ def flexio_handler(flex):
         flex.output.write(result)
 
     for item in get_data(params, limit):
-        result = json.dumps([item.get(p) for p in properties])
+        result = json.dumps([(item.get(p) or '') for p in properties])
         if first_row is False:
             result = ',' + result
         first_row = False
@@ -114,12 +114,13 @@ def get_data(params, limit):
     # - https://www.algolia.com/doc/api-reference/api-parameters/
 
     url_query_params = {
-        "query": params["filter"],
-            "tags": "story",
-            "restrictSearchableAttributes": "title",    # limit search to title
-            "disableTypoToleranceOnAttributes": "title" # don't allow typos when searching for words
+        'query': params['filter'],
+        'tags': 'story',
+        'restrictSearchableAttributes': 'title',    # limit search to title
+        'disableTypoToleranceOnAttributes': 'title' # don't allow typos when searching for words
     }
-    url = 'https://hn.algolia.com/api/v1/search'
+    #url = 'https://hn.algolia.com/api/v1/search' # search by relevance
+    url = 'http://hn.algolia.com/api/v1/search_by_date' # search by most recent date first by default
 
     page_size = 100
     page_idx = 0
@@ -183,21 +184,25 @@ def validator_list(field, value, error):
         return
     error(field, 'Must be a string or a list of strings')
 
+def to_list(value):
+    # if we have a list of strings, create a list from them; if we have
+    # a list of lists, flatten it into a single list of strings
+    if isinstance(value, str):
+        return value.split(',')
+    if isinstance(value, list):
+        return list(itertools.chain.from_iterable(value))
+    return None
+
+def to_date(value):
+    # TODO: convert if needed
+    return value
+
 def to_string(value):
     if isinstance(value, (date, datetime)):
         return value.isoformat()
     if isinstance(value, (Decimal)):
         return str(value)
     return value
-
-def to_list(value):
-    # if we have a list of strings, create a list from them; if we have
-    # a list of lists, flatten it into a single list of strings
-    if isinstance(value, str):
-        return value.split(",")
-    if isinstance(value, list):
-        return list(itertools.chain.from_iterable(value))
-    return None
 
 def get_item_info(item):
 
@@ -209,6 +214,6 @@ def get_item_info(item):
     info['author'] = item.get('author')
     info['points'] = item.get('points')
     info['num_comments'] = item.get('num_comments')
-    info['created_at'] = item.get('created_at')
+    info['created_at'] = to_date(item.get('created_at'))
 
     return info
