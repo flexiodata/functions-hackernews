@@ -15,35 +15,35 @@ templates:
     description: 'Import and filter comments currently posted on Hacker News'
     gsheets_spreadsheet_id: ''
     excel_spreadsheet_path: ''
-    in_production: false
-    in_staging: false
+    is_public: false
+    is_private: false
   - name: search-new-stories
     title: 'Lookup current stories on Hacker News'
     description: 'Import and filter stories currently posted on Hacker News'
     gsheets_spreadsheet_id: ''
     excel_spreadsheet_path: ''
-    in_production: false
-    in_staging: false
+    is_public: false
+    is_private: false
   - name: search-past-stories
     title: 'Lookup past stories on Hacker News'
     description: 'Import and filter stories posted on Hacker News on a previous date'
     gsheets_spreadsheet_id: ''
     excel_spreadsheet_path: ''
-    in_production: false
-    in_staging: false
+    is_public: false
+    is_private: false
   - name: search-ask-hacker-news
     title: 'Import posts from Ask Hacker News'
     description: 'Search and filter Ask Hacker News posts in your spreadsheet'
     gsheets_spreadsheet_id: ''
     excel_spreadsheet_path: ''
-    in_production: false
-    in_staging: false
+    is_public: false
+    is_private: false
   - name: search-show-hacker-news
     title: 'Import posts from Show Hacker News'
     description: 'Search and filter search Show Hacker News posts in your spreadsheet'
     gsheets_spreadsheet_id: ''
     excel_spreadsheet_path: ''
-    in_production: false
-    in_staging: false
+    is_public: false
+    is_private: false
 
 prompts: []
