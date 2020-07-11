@@ -2,7 +2,7 @@ title: HackerNews
 description: Functions for accessing stories from Hackernews
 
 image:
-  src: https://static.flex.io/assets/logos2/hacker-news.png
+  src: https://static.flex.io/assets/logos/hacker-news.png
   alt: Y Combinator logo
 
 functions:
